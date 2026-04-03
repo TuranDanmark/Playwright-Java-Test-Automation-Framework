@@ -17,8 +17,8 @@ import io.qameta.allure.Story;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
-@Epic("HomePage App")
-@Feature("Management")
+@Epic("EskizRezumePage App")
+@Feature("EskizRezume Management")
 @ExtendWith(RetryExtension.class)
 public class EskizRezumePageTest extends BaseTest {
 
@@ -37,6 +37,7 @@ EskizRezumePage eskizPage = new EskizRezumePage()
             .openCareer()
             .attachResume()
             .submitResume();
+        
         // ✅ Assertion (Playwright style)
         assertThat(eskizPage.submitResumeButton()).isVisible();
 
