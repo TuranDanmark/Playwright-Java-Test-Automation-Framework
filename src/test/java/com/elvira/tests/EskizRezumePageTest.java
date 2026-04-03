@@ -7,7 +7,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import com.elvira.core.base.BaseTest;
 import com.elvira.core.extension.RetryExtension;
 import com.elvira.pages.EskizRezumePage;
-import com.microsoft.playwright.junit.UsePlaywright;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
