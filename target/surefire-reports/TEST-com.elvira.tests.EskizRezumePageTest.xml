@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.elvira.tests.EskizRezumePageTest" time="45.677" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.elvira.tests.EskizRezumePageTest" time="36.806" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\halat\AppData\Local\Temp\surefire11386876171475683866\surefirebooter-20260403190308914_3.jar C:\Users\halat\AppData\Local\Temp\surefire11386876171475683866 2026-04-03T19-03-08_622-jvmRun1 surefire-20260403190308914_1tmp surefire_0-20260403190308914_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\halat\AppData\Local\Temp\surefire11620124265584509693\surefirebooter-20260404004754359_3.jar C:\Users\halat\AppData\Local\Temp\surefire11620124265584509693 2026-04-04T00-47-54_093-jvmRun1 surefire-20260404004754359_1tmp surefire_0-20260404004754359_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\halat\playwright-java-eskiz-uz-tests\target\test-classes;C:\Users\halat\playwright-java-eskiz-uz-tests\target\classes;C:\Users\halat\.m2\repository\com\microsoft\playwright\playwright\1.42.0\playwright-1.42.0.jar;C:\Users\halat\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\halat\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\halat\.m2\repository\com\microsoft\playwright\driver\1.42.0\driver-1.42.0.jar;C:\Users\halat\.m2\repository\com\microsoft\playwright\driver-bundle\1.42.0\driver-bundle-1.42.0.jar;C:\Users\halat\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\halat\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\halat\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\halat\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\halat\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\halat\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\halat\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\halat\.m2\repository\io\qameta\allure\allure-junit5\2.25.0\allure-junit5-2.25.0.jar;C:\Users\halat\.m2\repository\io\qameta\allure\allure-junit-platform\2.25.0\allure-junit-platform-2.25.0.jar;C:\Users\halat\.m2\repository\io\qameta\allure\allure-java-commons\2.25.0\allure-java-commons-2.25.0.jar;C:\Users\halat\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\halat\.m2\repository\io\qameta\allure\allure-model\2.25.0\allure-model-2.25.0.jar;C:\Users\halat\.m2\repository\io\qameta\allure\allure-test-filter\2.25.0\allure-test-filter-2.25.0.jar;C:\Users\halat\.m2\repository\org\junit\platform\junit-platform-launcher\1.9.2\junit-platform-launcher-1.9.2.jar;"/>
     <property name="allure.results.directory" value="target/allure-results"/>
@@ -32,7 +32,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\halat\AppData\Local\Temp\surefire11386876171475683866\surefirebooter-20260403190308914_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\halat\AppData\Local\Temp\surefire11620124265584509693\surefirebooter-20260404004754359_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.9+7-LTS-338"/>
@@ -60,5 +60,156 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="resumeTest" classname="com.elvira.tests.EskizRezumePageTest" time="45.478"/>
+  <testcase name="resumeTest" classname="com.elvira.tests.EskizRezumePageTest" time="36.787">
+    <flakyError message="Error {&#10;  message=&apos;Timeout 10000ms exceeded.&#10;  name=&apos;TimeoutError&#10;  stack=&apos;TimeoutError: Timeout 10000ms exceeded.&#10;    at ProgressController.run (C:\Users\halat\AppData\Local\Temp\playwright-java-5895415553264948600\package\lib\server\progress.js:78:26)&#10;    at Frame.goto (C:\Users\halat\AppData\Local\Temp\playwright-java-5895415553264948600\package\lib\server\frames.js:517:23)&#10;    at FrameDispatcher.goto (C:\Users\halat\AppData\Local\Temp\playwright-java-5895415553264948600\package\lib\server\dispatchers\frameDispatcher.js:81:119)&#10;    at FrameDispatcher._handleCommand (C:\Users\halat\AppData\Local\Temp\playwright-java-5895415553264948600\package\lib\server\dispatchers\dispatcher.js:94:40)&#10;    at DispatcherConnection.dispatch (C:\Users\halat\AppData\Local\Temp\playwright-java-5895415553264948600\package\lib\server\dispatchers\dispatcher.js:365:39)&#10;}&#10;Call log:&#10;- navigating to &quot;https://eskiz.uz/&quot;, waiting until &quot;load&quot;&#10;" type="com.microsoft.playwright.TimeoutError">
+      <stackTrace><![CDATA[com.microsoft.playwright.TimeoutError: 
+Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\halat\AppData\Local\Temp\playwright-java-5895415553264948600\package\lib\server\progress.js:78:26)
+    at Frame.goto (C:\Users\halat\AppData\Local\Temp\playwright-java-5895415553264948600\package\lib\server\frames.js:517:23)
+    at FrameDispatcher.goto (C:\Users\halat\AppData\Local\Temp\playwright-java-5895415553264948600\package\lib\server\dispatchers\frameDispatcher.js:81:119)
+    at FrameDispatcher._handleCommand (C:\Users\halat\AppData\Local\Temp\playwright-java-5895415553264948600\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\halat\AppData\Local\Temp\playwright-java-5895415553264948600\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- navigating to "https://eskiz.uz/", waiting until "load"
+
+	at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:120)
+	at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+	at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:106)
+	at com.microsoft.playwright.impl.FrameImpl.navigateImpl(FrameImpl.java:463)
+	at com.microsoft.playwright.impl.PageImpl.lambda$navigate$46(PageImpl.java:870)
+	at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+	at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:89)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:870)
+	at com.microsoft.playwright.impl.PageImpl.navigate(PageImpl.java:42)
+	at com.microsoft.playwright.Page.navigate(Page.java:5354)
+	at com.elvira.pages.EskizRezumePage.open(EskizRezumePage.java:15)
+	at com.elvira.tests.EskizRezumePageTest.resumeTest(EskizRezumePageTest.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.compute(ForkJoinPoolHierarchicalTestExecutorService.java:202)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService.invokeAll(ForkJoinPoolHierarchicalTestExecutorService.java:146)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.compute(ForkJoinPoolHierarchicalTestExecutorService.java:202)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService.invokeAll(ForkJoinPoolHierarchicalTestExecutorService.java:146)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.compute(ForkJoinPoolHierarchicalTestExecutorService.java:202)
+	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1310)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1841)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1806)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 10000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 10000ms exceeded.
+    at ProgressController.run (C:\Users\halat\AppData\Local\Temp\playwright-java-5895415553264948600\package\lib\server\progress.js:78:26)
+    at Frame.goto (C:\Users\halat\AppData\Local\Temp\playwright-java-5895415553264948600\package\lib\server\frames.js:517:23)
+    at FrameDispatcher.goto (C:\Users\halat\AppData\Local\Temp\playwright-java-5895415553264948600\package\lib\server\dispatchers\frameDispatcher.js:81:119)
+    at FrameDispatcher._handleCommand (C:\Users\halat\AppData\Local\Temp\playwright-java-5895415553264948600\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\halat\AppData\Local\Temp\playwright-java-5895415553264948600\package\lib\server\dispatchers\dispatcher.js:365:39)
+}
+Call log:
+- navigating to "https://eskiz.uz/", waiting until "load"
+
+	at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+	at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+	at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:118)
+	... 67 more
+]]></stackTrace>
+      <system-out><![CDATA[Retrying test: resumeTest() | attempt: 1
+]]></system-out>
+      <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Apr 04, 2026 12:48:29 AM org.junit.jupiter.engine.descriptor.MethodBasedTestDescriptor lambda$invokeTestWatchers$3
+WARNING: Failed to invoke TestWatcher [com.elvira.utils.TestListener] for method [com.elvira.tests.EskizRezumePageTest#resumeTest()] with display name [resumeTest()]
+java.lang.NullPointerException: Cannot invoke "com.elvira.core.context.TestContext.getPage()" because the return value of "com.elvira.core.context.ContextManager.get()" is null
+	at com.elvira.core.lifecyle.TestLifecycleManager.getPage(TestLifecycleManager.java:65)
+	at com.elvira.utils.TestListener.testFailed(TestListener.java:15)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$nodeFinished$15(TestMethodTestDescriptor.java:307)
+	at org.junit.jupiter.engine.descriptor.MethodBasedTestDescriptor.lambda$invokeTestWatchers$3(MethodBasedTestDescriptor.java:130)
+	at org.junit.platform.commons.util.CollectionUtils.forEachInReverseOrder(CollectionUtils.java:217)
+	at org.junit.jupiter.engine.descriptor.MethodBasedTestDescriptor.invokeTestWatchers(MethodBasedTestDescriptor.java:144)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.nodeFinished(TestMethodTestDescriptor.java:298)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.nodeFinished(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.reportCompletion(NodeTestTask.java:188)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.compute(ForkJoinPoolHierarchicalTestExecutorService.java:202)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService.invokeAll(ForkJoinPoolHierarchicalTestExecutorService.java:146)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.compute(ForkJoinPoolHierarchicalTestExecutorService.java:202)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService.invokeAll(ForkJoinPoolHierarchicalTestExecutorService.java:146)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.ForkJoinPoolHierarchicalTestExecutorService$ExclusiveTask.compute(ForkJoinPoolHierarchicalTestExecutorService.java:202)
+	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1310)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1841)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1806)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+
+]]></system-err>
+    </flakyError>
+  </testcase>
 </testsuite>
