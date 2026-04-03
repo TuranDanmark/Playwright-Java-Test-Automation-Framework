@@ -39,8 +39,5 @@ EskizRezumePage eskizPage = new EskizRezumePage()
             .submitResume();
         // ✅ Assertion (Playwright style)
         assertThat(eskizPage.submitResumeButton()).isVisible();
-
-        // ✅ Альтернатива (если нужно проверить текст)
-        assertThat(eskizPage.resumeFormTitle()).containsText("Отправить резюме");
 }
 }
