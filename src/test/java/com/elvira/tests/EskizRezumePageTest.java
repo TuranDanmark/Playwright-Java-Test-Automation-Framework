@@ -20,7 +20,6 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 
 @Epic("HomePage App")
 @Feature("Management")
-@UsePlaywright
 @ExtendWith(RetryExtension.class)
 public class EskizRezumePageTest extends BaseTest {
 
