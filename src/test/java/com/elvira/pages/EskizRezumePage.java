@@ -12,7 +12,6 @@ public class EskizRezumePage extends BasePage {
     @Step("Open main page")
     public EskizRezumePage open() {
     page.navigate(ConfigReader.get("baseUrl"));
-        waitForPageLoad();
         return this;
     }
 
@@ -28,7 +27,7 @@ public class EskizRezumePage extends BasePage {
         return this;
     }
 
-    @Step("Open order page")
+    @Step("Open order section")
     public EskizRezumePage openOrderPage() {
     page.getByRole(AriaRole.TAB, new Page.GetByRoleOptions().setName("Пять причин заказать себе сайт")).click();
         return this;

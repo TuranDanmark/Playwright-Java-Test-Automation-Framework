@@ -33,6 +33,7 @@ EskizRezumePage eskizPage = new EskizRezumePage()
             .open()
             .openSites()
             .openExpressSites()
+            .openOrderPage()
             .openCareer()
             .attachResume();
 
