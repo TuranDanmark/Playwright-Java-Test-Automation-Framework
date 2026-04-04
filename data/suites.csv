@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Apr 04 08:31:36 UTC 2026","Sat Apr 04 08:32:09 UTC 2026","32456","","com.elvira.tests.EskizRezumePageTest","","com.elvira.tests.EskizRezumePageTest","resumeTest","resumeTest()","Verify that user can asserted Resume visible"
