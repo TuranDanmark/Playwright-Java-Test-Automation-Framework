@@ -27,7 +27,7 @@ public class EskizRezumePageTest extends BaseTest {
 @Story("User opens resume submission form")
 @Description("Verify that resume submission form is displayed after navigation")
 @Severity(SeverityLevel.CRITICAL)
-void resumeTest() {
+void shouldOpenResumeForm() {
 
 EskizRezumePage eskizPage = new EskizRezumePage()
             .open()

@@ -4,7 +4,6 @@ import com.elvira.core.config.ConfigReader;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
-import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 import io.qameta.allure.Step;
 
@@ -43,13 +42,12 @@ public class EskizRezumePage extends BasePage {
 
     @Step("Attach resume")
     public EskizRezumePage attachResume() {
-    page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Прикрепить резюме")).click();
+    page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Прикрепить резюме")).click();
         return this;
     }
 
     // ✅ Locator для assertions
     public Locator resumeFormTitle() {
-        return page.getByRole(AriaRole.HEADING,
-                new Page.GetByRoleOptions().setName("Отправить резюме"));
+        return page.getByRole(AriaRole.HEADING, new Page.GetByRoleOptions().setName("Отправить резюме"));
     }
 }
