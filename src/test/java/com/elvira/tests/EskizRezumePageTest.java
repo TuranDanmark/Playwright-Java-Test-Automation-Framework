@@ -17,15 +17,15 @@ import io.qameta.allure.Story;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
-@Epic("EskizRezumePage App")
-@Feature("EskizRezume Management")
+@Epic("Eskiz App")
+@Feature("Resume Submission")
 @ExtendWith(RetryExtension.class)
 public class EskizRezumePageTest extends BaseTest {
 
 @Tag("regression")
 @Test
-@Story("User can submit Resume")
-@Description("Verify that user can asserted Resume visible")
+@Story("User opens resume submission form")
+@Description("Verify that resume submission form is displayed after navigation")
 @Severity(SeverityLevel.CRITICAL)
 void resumeTest() {
 
@@ -35,14 +35,9 @@ EskizRezumePage eskizPage = new EskizRezumePage()
             .openExpressSites()
             .openOrderPage()
             .openCareer()
-            .attachResume()
-            .submitResume();
-        
+            .attachResume();
+
         // ✅ Assertion (Playwright style)
-        assertThat(eskizPage.submitResumeButton()).isVisible();
-
-        // ✅ Альтернатива (если нужно проверить текст)
-        assertThat(eskizPage.resumeFormTitle()).containsText("Отправить резюме");
-
+        assertThat(eskizPage.resumeFormTitle()).isVisible();
 }
 }

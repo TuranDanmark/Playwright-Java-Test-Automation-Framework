@@ -47,21 +47,9 @@ public class EskizRezumePage extends BasePage {
         return this;
     }
 
-    @Step("Submit resume")
-    public EskizRezumePage submitResume() {
-assertThat(
-    page.getByRole(AriaRole.HEADING, new Page.GetByRoleOptions().setName("Отправить резюме"))).isVisible();
-        return this;
-    }
-
-        // 🔥 Locator для assertion (важно)
-    public Locator submitResumeButton() {
-        return page.getByText("Отправить резюме");
-    }
-
-    // 🔥 ещё один пример (если появится заголовок)
+    // ✅ Locator для assertions
     public Locator resumeFormTitle() {
-        return page.getByText("Отправить резюме");
+        return page.getByRole(AriaRole.HEADING,
+                new Page.GetByRoleOptions().setName("Отправить резюме"));
     }
-
 }
