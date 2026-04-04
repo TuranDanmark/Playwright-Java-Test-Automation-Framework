@@ -12,7 +12,8 @@ public class EskizRezumePage extends BasePage {
 
     @Step("Open main page")
     public EskizRezumePage open() {
-        page.navigate(ConfigReader.get("baseUrl"));
+    page.navigate(ConfigReader.get("baseUrl"));
+        waitForPageLoad();
         return this;
     }
 
