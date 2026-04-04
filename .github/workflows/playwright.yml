@@ -22,9 +22,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Build Docker Image
-        run: docker build -t playwright-tests .
         
       # Java setup with cache
       - name: Setup Java
