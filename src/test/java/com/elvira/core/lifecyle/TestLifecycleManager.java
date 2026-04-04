@@ -62,6 +62,9 @@ public class TestLifecycleManager {
     }
 
     public static Page getPage() {
-        return ContextManager.get().getPage();
+        if (ContextManager.get() == null) {
+        return null;
     }
+        return ContextManager.get().getPage();
+}
 }
