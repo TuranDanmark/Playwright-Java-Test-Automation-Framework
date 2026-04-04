@@ -9,40 +9,34 @@ import org.junit.jupiter.api.extension.TestWatcher;
 
 public class TestListener implements TestWatcher {
 
-    @Override
-    public void testFailed(ExtensionContext context, Throwable cause) {
+@Override
+public void testFailed(ExtensionContext context, Throwable cause) {
 
-        Page page = TestLifecycleManager.getPage();
-        if (page == null) return;
+    Page page = safeGetPage();
+    String testName = context.getDisplayName();
 
-        String testName = context.getDisplayName();
+    tryAttach(() -> AllureAttachmentService.attachScreenshot(page));
+    tryAttach(() -> AllureAttachmentService.attachTrace(page, testName));
+    tryAttach(() -> AllureAttachmentService.attachVideo(page));
+    tryAttach(() -> AllureAttachmentService.attachPageUrl(page));
+    tryAttach(() -> AllureAttachmentService.attachError(cause));
+    tryAttach(AllureAttachmentService::attachConsoleLogs);
+    tryAttach(AllureAttachmentService::attachNetworkLogs);
+}
 
-        // 📸 Screenshot
-        AllureAttachmentService.attachScreenshot(page);
-
-        // 📦 Trace
-        AllureAttachmentService.attachTrace(page, testName);
-
-        // 🎥 Video
-        AllureAttachmentService.attachVideo(page);
-
-        // 🌐 URL
-        AllureAttachmentService.attachPageUrl(page);
-
-        // ❗ Error
-        AllureAttachmentService.attachError(cause);
-
-        AllureAttachmentService.attachConsoleLogs();
-
-        AllureAttachmentService.attachNetworkLogs();
-
+private Page safeGetPage() {
+    try {
+        return TestLifecycleManager.getPage();
+    } catch (Exception e) {
+        return null;
     }
+}
 
-    @Override
-    public void testSuccessful(ExtensionContext context) {
-        // 👉 опционально: можно останавливать trace без сохранения
-        // или вообще ничего не делать
+private void tryAttach(Runnable action) {
+    try {
+        action.run();
+    } catch (Exception ignored) {
+        // 💡 никогда не ломаем тест из-за аттачей
     }
-
-
+}
 }
