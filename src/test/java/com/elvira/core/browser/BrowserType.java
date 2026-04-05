@@ -5,7 +5,11 @@ public enum BrowserType {
     FIREFOX,
     WEBKIT;
 
-    public static BrowserType from(String value) {
+public static BrowserType fromOrDefault(String value, BrowserType defaultType) {
+    try {
         return BrowserType.valueOf(value.toUpperCase());
+    } catch (Exception e) {
+        return defaultType;
     }
+}
 }

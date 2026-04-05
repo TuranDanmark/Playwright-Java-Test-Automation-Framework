@@ -10,7 +10,8 @@ public class BasePage {
     protected final Page page;
 
     public BasePage() {
-        this.page = ContextManager.get().getPage(); }
+        this.page = ContextManager.get().getPage();
+    }
 
     // 🔹 Page state waits
     protected void waitForPageLoad() {

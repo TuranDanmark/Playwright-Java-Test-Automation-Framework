@@ -22,14 +22,11 @@ static void setupAll() {
         TestLifecycleManager.init();
     }
 
-@AfterEach
-void tearDown() {
-    try {
+    @AfterEach
+    void tearDown() {
         TestLifecycleManager.cleanup();
-    } catch (Exception ignored) {
-        // 💡 тест уже упал — не добиваем его
     }
-}
+
     protected Page getPage() {
         return TestLifecycleManager.getPage();
     }
