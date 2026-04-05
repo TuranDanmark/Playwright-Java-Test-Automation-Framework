@@ -22,22 +22,24 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 @ExtendWith(RetryExtension.class)
 public class EskizRezumePageTest extends BaseTest {
 
-@Tag("regression")
-@Test
-@Story("User opens resume submission form")
-@Description("Verify that resume submission form is displayed after navigation")
-@Severity(SeverityLevel.CRITICAL)
-void shouldOpenResumeForm() {
+    @Tag("regression")
+    @Test
+    @Story("User opens resume submission form")
+    @Description("Verify that resume submission form is displayed after navigation")
+    @Severity(SeverityLevel.CRITICAL)
+    void shouldOpenResumeForm() {
 
-EskizRezumePage eskizPage = new EskizRezumePage()
-            .open()
-            .openSites()
-            .openExpressSites()
-            .openOrderPage()
-            .openCareer()
-            .attachResume();
+        EskizRezumePage eskizPage = new EskizRezumePage()
+                .open()
+                .openSites()
+                .openExpressSites()
+                .openCareer()
+                .attachResume();
 
-        // ✅ Assertion (Playwright style)
-        assertThat(eskizPage.resumeFormTitle()).isVisible();
-}
+        // 🔹 wait + assertion в шаге Allure
+        io.qameta.allure.Allure.step("Verify resume submission form is visible", () -> {
+            eskizPage.waitVisible(eskizPage.resumeFormTitle(), "Resume Form Title", 5000);
+            assertThat(eskizPage.resumeFormTitle()).isVisible();
+        });
+    }
 }

@@ -8,11 +8,12 @@ import com.elvira.core.config.Environment;
 public class AllureEnvironmentWriter {
 
     public static void write() {
-
         try {
-
             File dir = new File("target/allure-results");
-            dir.mkdirs();
+            if (!dir.exists() && !dir.mkdirs()) {
+                log("Failed to create directory: " + dir.getAbsolutePath());
+                return;
+            }
 
             File file = new File(dir, "environment.properties");
 
@@ -22,8 +23,16 @@ public class AllureEnvironmentWriter {
                 writer.println("Environment=" + Environment.current().name());
                 writer.println("OS=" + System.getProperty("os.name"));
                 writer.println("Java=" + System.getProperty("java.version"));
+                log("Allure environment.properties written successfully");
             }
 
-        } catch (Exception ignored) {}
+        } catch (Exception e) {
+            log("Failed to write environment.properties: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    private static void log(String message) {
+        System.out.println("[AllureEnvironmentWriter] " + message);
     }
 }

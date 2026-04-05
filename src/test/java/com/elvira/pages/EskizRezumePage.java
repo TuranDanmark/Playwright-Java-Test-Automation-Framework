@@ -9,39 +9,40 @@ import io.qameta.allure.Step;
 
 public class EskizRezumePage extends BasePage {
 
+    private static final String BTN_SITES = "Сайты";
+    private static final String LINK_EXPRESS = "ЭКСПРЕСС САЙТЫ";
+    private static final String LINK_CAREER = "Карьера";
+    private static final String LINK_ATTACH_RESUME = "Прикрепить резюме";
+
     @Step("Open main page")
     public EskizRezumePage open() {
-    page.navigate(ConfigReader.get("baseUrl"));
+        page.navigate(ConfigReader.get("baseUrl"));
+        waitForPageLoad();
+        log("[PAGE] Main page opened");
         return this;
     }
 
     @Step("Open 'Сайты'")
     public EskizRezumePage openSites() {
-    page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Сайты")).click();
+        click(page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(BTN_SITES)), "Open 'Сайты'");
         return this;
     }
 
     @Step("Open 'Экспресс сайты'")
     public EskizRezumePage openExpressSites() {
-    page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("ЭКСПРЕСС САЙТЫ").setExact(true)).click();
-        return this;
-    }
-
-    @Step("Open order section")
-    public EskizRezumePage openOrderPage() {
-    page.getByRole(AriaRole.TAB, new Page.GetByRoleOptions().setName("Пять причин заказать себе сайт")).click();
+        click(page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName(LINK_EXPRESS).setExact(true)), "Open 'Экспресс сайты'");
         return this;
     }
 
     @Step("Open career section")
     public EskizRezumePage openCareer() {
-    page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Карьера")).click();
+        click(page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName(LINK_CAREER)), "Open 'Карьера'");
         return this;
     }
 
     @Step("Attach resume")
     public EskizRezumePage attachResume() {
-    page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Прикрепить резюме")).click();
+        click(page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName(LINK_ATTACH_RESUME)), "Attach resume");
         return this;
     }
 

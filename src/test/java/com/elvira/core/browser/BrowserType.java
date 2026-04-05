@@ -5,11 +5,19 @@ public enum BrowserType {
     FIREFOX,
     WEBKIT;
 
-public static BrowserType fromOrDefault(String value, BrowserType defaultType) {
-    try {
-        return BrowserType.valueOf(value.toUpperCase());
-    } catch (Exception e) {
-        return defaultType;
+    // ✅ Получение enum с безопасным fallback
+    public static BrowserType fromOrDefault(String value, BrowserType defaultType) {
+        if (value == null || value.isBlank()) return defaultType;
+        try {
+            return BrowserType.valueOf(value.trim().toUpperCase());
+        } catch (IllegalArgumentException e) {
+            return defaultType;
+        }
     }
-}
+
+    // ✅ Строковое представление для логов / Allure
+    @Override
+    public String toString() {
+        return name().toLowerCase();
+    }
 }
