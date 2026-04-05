@@ -47,11 +47,13 @@ jobs:
           path: ~/.cache/ms-playwright
           key: ${{ steps.cache-key.outputs.key }}
 
+      # Install browsers + deps
       - name: Install Playwright Browsers
-        run: mvn exec:java \
-          -Dexec.mainClass=com.microsoft.playwright.CLI \
-          -Dexec.args="install chromium firefox webkit"
+        run: mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install chromium firefox webkit --force"
 
+      - name: Install Playwright dependencies
+        run: npx playwright install-deps
+        
       - name: Build project (skip tests)
         run: mvn -B clean package -DskipTests
 
