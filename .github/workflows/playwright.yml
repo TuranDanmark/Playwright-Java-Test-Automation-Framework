@@ -14,6 +14,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    timeout-minutes: 30
+
     strategy:
       fail-fast: false
       matrix:
@@ -23,13 +25,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build Docker Image
-        run: docker build -t playwright-tests .
-
-      - name: Run Tests in Docker
-        run: docker run playwright-tests
-
-      # Java setup with cache
+      # ✅ Java setup
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
@@ -37,23 +33,22 @@ jobs:
           java-version: 21
           cache: maven
 
-      # Cache Playwright browsers
+      # ✅ Cache Playwright browsers (better key)
       - name: Cache Playwright Browsers
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}
+          key: playwright-${{ runner.os }}-v1
           restore-keys: |
             playwright-${{ runner.os }}
 
-      # Install browsers + deps
+      # ✅ Install Playwright browsers
       - name: Install Playwright Browsers
-        run: mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install chromium firefox webkit --force"
+        run: mvn exec:java \
+          -Dexec.mainClass=com.microsoft.playwright.CLI \
+          -Dexec.args="install chromium firefox webkit"
 
-      - name: Install Playwright dependencies
-        run: npx playwright install-deps
-
-      # Run tests with retry support
+      # ✅ Run tests
       - name: Run Tests
         run: |
           mvn clean test \
@@ -61,7 +56,7 @@ jobs:
           -Dheadless=true \
           -DretryCount=1
 
-        # Upload allure results
+      # ✅ Upload Allure results
       - name: Upload Allure Results
         if: always()
         uses: actions/upload-artifact@v4
@@ -73,27 +68,30 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
 
+    timeout-minutes: 15
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Download all results
+      # ✅ Download artifacts
       - name: Download Allure Results
         uses: actions/download-artifact@v4
         with:
-          path: allure-results-temp
+          path: allure-results
 
-      # Merge results
+      # ✅ Merge results properly
       - name: Merge Allure Results
         run: |
           mkdir -p target/allure-results
-          cp -r allure-results/*/* target/allure-results || true
-          
-      # Generate report
+          find allure-results -type d -name "allure-results" \
+          -exec cp -r {}/* target/allure-results \; || true
+
+      # ✅ Generate report
       - name: Generate Allure Report
         run: mvn allure:report
-        
-      # Deploy to GitHub Pages
+
+      # ✅ Deploy report
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
