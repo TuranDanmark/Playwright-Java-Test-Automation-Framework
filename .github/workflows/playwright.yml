@@ -50,6 +50,9 @@ jobs:
       - name: Install Playwright Browsers
         run: mvn exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install chromium firefox webkit --force"
 
+      - name: Install Playwright dependencies
+        run: npx playwright install-deps
+
       # Run tests with retry support
       - name: Run Tests
         run: |
