@@ -1,7 +1,6 @@
 package com.elvira.utils;
 
 import com.elvira.core.artifacts.TestArtifacts;
-import com.elvira.core.config.ConfigReader;
 import com.microsoft.playwright.ConsoleMessage;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Request;
