@@ -12,6 +12,7 @@ permissions:
 
 env:
   JAVA_VERSION: 21
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
 
@@ -94,7 +95,6 @@ jobs:
           -Dbrowser=${{ matrix.browser }} \
           -Dheadless=true \
           -DretryCount=1
-
       # 📦 Артефакты (важно для дебага)
       - name: Upload Allure Results
         if: always()
@@ -137,7 +137,6 @@ jobs:
           mkdir -p target/allure-results
           find artifacts -type f -name "*.json" \
           -exec cp {} target/allure-results \;
-
       - name: Generate Allure Report
         run: mvn allure:report
 
@@ -146,7 +145,6 @@ jobs:
         run: |
           echo "## ✅ Test Report" >> $GITHUB_STEP_SUMMARY
           echo "Allure report generated successfully." >> $GITHUB_STEP_SUMMARY
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:

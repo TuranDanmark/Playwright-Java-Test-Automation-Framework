@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Apr 07 13:13:35 CEST 2026","Tue Apr 07 13:13:57 CEST 2026","22485","","com.elvira.tests.EskizRezumePageTest","","com.elvira.tests.EskizRezumePageTest","shouldOpenResumeForm","shouldOpenResumeForm()","Verify that resume submission form is displayed after navigation"
