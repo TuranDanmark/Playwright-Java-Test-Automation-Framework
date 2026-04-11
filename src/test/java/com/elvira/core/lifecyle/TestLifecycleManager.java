@@ -16,7 +16,6 @@ import java.time.format.DateTimeFormatter;
 public class TestLifecycleManager {
 
     private static final ThreadLocal<Playwright> playwrightThread = new ThreadLocal<>();
-    private static final ThreadLocal<Browser> browserThread = new ThreadLocal<>();
 
     public static void init() {
 
@@ -25,7 +24,7 @@ public class TestLifecycleManager {
         TestContext ctx = new TestContext();
 
         try {
-            // ✅ Playwright
+            // ✅ Playwright (thread-safe)
             if (playwrightThread.get() == null) {
                 log("Creating Playwright instance");
                 playwrightThread.set(Playwright.create());
@@ -34,13 +33,8 @@ public class TestLifecycleManager {
             Playwright playwright = playwrightThread.get();
             ctx.setPlaywright(playwright);
 
-            // ✅ Browser
-            if (browserThread.get() == null) {
-                log("Creating Browser instance");
-                browserThread.set(BrowserFactory.createBrowser(playwright));
-            }
-
-            Browser browser = browserThread.get();
+            // ✅ Browser (НОВЫЙ НА КАЖДЫЙ ТЕСТ)
+            Browser browser = BrowserFactory.createBrowser(playwright);
             ctx.setBrowser(browser);
 
             // ✅ testId
@@ -74,6 +68,7 @@ public class TestLifecycleManager {
             page.navigate(ConfigReader.get("baseUrl"));
             page.setDefaultTimeout(ConfigReader.getInt("timeout"));
 
+            // ✅ ВАЖНО: устанавливаем контекст В КОНЦЕ
             ContextManager.set(ctx);
 
             log("=== INIT SUCCESS ===");
@@ -93,10 +88,10 @@ public class TestLifecycleManager {
 
         log("=== CLEANUP START ===");
 
-        TestContext ctx = ContextManager.get();
+        TestContext ctx = ContextManager.getOrNull();
 
         if (ctx == null) {
-            log("Context is null");
+            log("Context not initialized, skipping cleanup");
             return;
         }
 
@@ -109,7 +104,7 @@ public class TestLifecycleManager {
     }
 
     public static Page getPage() {
-        TestContext ctx = ContextManager.get();
+        TestContext ctx = ContextManager.getOrNull();
 
         if (ctx == null || ctx.getPage() == null) {
             throw new IllegalStateException("Page is not initialized");
@@ -118,7 +113,7 @@ public class TestLifecycleManager {
         return ctx.getPage();
     }
 
-    // 🔥 безопасный cleanup (главное улучшение)
+    // 🔥 безопасный cleanup (production-ready)
     private static void safeCleanup(TestContext ctx) {
 
         // tracing
@@ -130,6 +125,15 @@ public class TestLifecycleManager {
             log("Tracing stop failed: " + e.getMessage());
         }
 
+        // page
+        try {
+            if (ctx.getPage() != null) {
+                ctx.getPage().close();
+            }
+        } catch (Exception e) {
+            log("Page close failed: " + e.getMessage());
+        }
+
         // context
         try {
             if (ctx.getContext() != null) {
@@ -137,6 +141,15 @@ public class TestLifecycleManager {
             }
         } catch (Exception e) {
             log("Context close failed: " + e.getMessage());
+        }
+
+        // browser
+        try {
+            if (ctx.getBrowser() != null) {
+                ctx.getBrowser().close();
+            }
+        } catch (Exception e) {
+            log("Browser close failed: " + e.getMessage());
         }
     }
 
@@ -146,7 +159,7 @@ public class TestLifecycleManager {
     }
 
     private static String generateTraceName() {
-        return "trace-" + System.currentTimeMillis() + ".zip";
+        return "trace-" + System.currentTimeMillis(); // ❗ без .zip
     }
 
     private static void log(String msg) {

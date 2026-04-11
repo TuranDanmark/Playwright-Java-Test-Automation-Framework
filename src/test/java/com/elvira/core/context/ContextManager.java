@@ -2,13 +2,8 @@ package com.elvira.core.context;
 
 public class ContextManager {
 
-    // ThreadLocal для тестового контекста (safe для параллельных тестов)
     private static final ThreadLocal<TestContext> context = new ThreadLocal<>();
 
-    /**
-     * Установить TestContext для текущего потока.
-     * Если уже установлен — кидает исключение.
-     */
     public static void set(TestContext ctx) {
         if (ctx == null) {
             throw new IllegalArgumentException("Cannot set null TestContext");
@@ -24,8 +19,7 @@ public class ContextManager {
     }
 
     /**
-     * Получить TestContext для текущего потока.
-     * Если ещё не установлен — кидает исключение.
+     * ❗ Строгий метод — используется в тестах
      */
     public static TestContext get() {
         TestContext ctx = context.get();
@@ -38,9 +32,19 @@ public class ContextManager {
     }
 
     /**
-     * Очистить TestContext из текущего потока.
-     * Используется в cleanup().
+     * ✅ Безопасный метод — используется в cleanup / hooks
      */
+    public static TestContext getOrNull() {
+        return context.get();
+    }
+
+    /**
+     * (опционально, но очень удобно)
+     */
+    public static boolean isInitialized() {
+        return context.get() != null;
+    }
+
     public static void unload() {
         if (context.get() != null) {
             log("Unloading TestContext for thread: " + Thread.currentThread().getName());
@@ -48,7 +52,6 @@ public class ContextManager {
         }
     }
 
-    // 🔧 Вспомогательный метод для логов
     private static void log(String message) {
         System.out.println("[ContextManager] " + message);
     }
