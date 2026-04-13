@@ -7,6 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import com.elvira.core.base.BaseTest;
 import com.elvira.core.extension.RetryExtension;
 import com.elvira.pages.EskizRezumePage;
+import com.microsoft.playwright.junit.UsePlaywright;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
@@ -20,6 +21,8 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 @Epic("Eskiz App")
 @Feature("Resume Submission")
 @ExtendWith(RetryExtension.class)
+@UsePlaywright
+
 public class EskizRezumePageTest extends BaseTest {
 
     @Tag("regression")
@@ -29,12 +32,13 @@ public class EskizRezumePageTest extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     void shouldOpenResumeForm() {
 
-        EskizRezumePage eskizPage = new EskizRezumePage()
-                .open()
-                .openSites()
-                .openExpressSites()
-                .openCareer()
-                .attachResume();
+        EskizRezumePage eskizPage = new EskizRezumePage();
+
+        eskizPage.open();
+        eskizPage.openSites();
+        eskizPage.openExpressSites();
+        eskizPage.openCareer();
+        eskizPage.attachResume();
 
         // 🔹 wait + assertion в шаге Allure
         io.qameta.allure.Allure.step("Verify resume submission form is visible", () -> {
