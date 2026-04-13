@@ -2,10 +2,8 @@ package com.elvira.tests;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 
 import com.elvira.core.base.BaseTest;
-import com.elvira.core.extension.RetryExtension;
 import com.elvira.pages.EskizRezumePage;
 
 import io.qameta.allure.Description;
@@ -19,7 +17,6 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 
 @Epic("Eskiz App")
 @Feature("Resume Submission")
-@ExtendWith(RetryExtension.class)
 
 public class EskizRezumePageTest extends BaseTest {
 
