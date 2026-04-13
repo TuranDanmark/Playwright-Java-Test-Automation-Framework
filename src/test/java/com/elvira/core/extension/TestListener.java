@@ -1,4 +1,4 @@
-package com.elvira.utils;
+package com.elvira.core.extension;
 
 import com.elvira.core.lifecyle.TestLifecycleManager;
 import com.elvira.core.allure.AllureAttachmentService;
