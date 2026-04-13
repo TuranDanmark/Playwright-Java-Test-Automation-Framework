@@ -14,5 +14,6 @@ com\elvira\core\allure\AllureEnvironmentWriter.class
 com\elvira\core\config\Environment.class
 com\elvira\utils\PageEventListener.class
 com\elvira\core\allure\AllureLogger.class
+com\elvira\core\extension\RetryExtension.class
 com\elvira\core\lifecyle\TestLifecycleManager.class
 com\elvira\core\base\BaseTest.class

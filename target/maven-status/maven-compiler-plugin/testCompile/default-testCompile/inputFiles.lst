@@ -15,4 +15,5 @@ C:\Users\halat\playwright-java-eskiz-uz-tests\src\test\java\com\elvira\core\allu
 C:\Users\halat\playwright-java-eskiz-uz-tests\src\test\java\com\elvira\pages\BasePage.java
 C:\Users\halat\playwright-java-eskiz-uz-tests\src\test\java\com\elvira\pages\EskizRezumePage.java
 C:\Users\halat\playwright-java-eskiz-uz-tests\src\test\java\com\elvira\core\base\BaseTest.java
+C:\Users\halat\playwright-java-eskiz-uz-tests\src\test\java\com\elvira\core\extension\RetryExtension.java
 C:\Users\halat\playwright-java-eskiz-uz-tests\src\test\java\com\elvira\core\lifecyle\TestLifecycleManager.java
